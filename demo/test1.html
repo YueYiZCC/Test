@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
+</head>
+
+<body>
+    <div id="editor_holder" class="container">
+    </div>
+    <button id="setJSON">Set JSON</button>
+    <button id="getJSON">Get JSON</button>
+    <script type="text/javascript">
+    //var element = document.getElementById('editor_holder');
+    var container = document.querySelector('.container');
+    //var debug = document.querySelector('.debug');
+    var schema = {
+        "type": "array",
+        "title": "Nodes",
+        "items": {
+            "type": "object",
+            "title": "Node",
+            "properties": {
+                "node": {
+                    "type": "string",
+                    "title": "I am a node"
+                }
+            }
+        }
+    };
+
+    var editor = new JSONEditor(container, {
+        schema: schema
+    });
+
+    // document.querySelector('.get-value').addEventListener('click', function () {
+    //   debug.value = JSON.stringify(editor.getValue());
+    // });
+    </script>
+</body>
+
+</html>
